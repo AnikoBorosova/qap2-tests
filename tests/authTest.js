@@ -45,6 +45,21 @@ describe("Auth tests", () => {
 			});
 	});
 
+	it("Load request with missing apiKey", (done) => {
+		chai
+			.request(requestUrl)
+			.post("/load")
+			.set("Content-Type", "application/json")
+			.set("Accept", "application/json")
+			.set("api-key", "")
+			.send(testDataLoad)
+			.end((err, res) => {
+				expect(res).to.have.status(403);
+				expect(res.error.text).to.equal(`{"detail":"Not authenticated"}`)
+				done();
+			});
+	});
+
 	it("Load request with correct apiKey", (done) => {
 		chai
 			.request(requestUrl)
