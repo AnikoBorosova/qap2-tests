@@ -18,7 +18,7 @@ const patternEmpty = require("../testData/pattern").patternEmpty;
 const patternBoundary = require("../testData/pattern").patternBoundary; // length: 200
 
 
-describe("check tests", () => {
+describe("Check tests", () => {
 
 	it("Check request with missing pattern", (done) => {
 		chai

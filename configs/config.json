@@ -1,8 +1,6 @@
 {
 	"urls": {
-		"requestUrl": "https://qap2-z5olkhbk.review-apps.contractbook.com",
-		"load": "https://qap2-z5olkhbk.review-apps.contractbook.com/load",
-		"check": ""
+		"requestUrl": "https://qap2-z5olkhbk.review-apps.contractbook.com"
 	},
 	"apiKeyIncorrect": "randomString",
 	"apiKeyMalformed": {
