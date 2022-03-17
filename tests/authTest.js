@@ -11,7 +11,7 @@ const apiKeyMalformed = require("../configs/config").apiKeyMalformed;
 const config = require("../configs/config");
 const requestUrl = config.urls.requestUrl;
 
-const testDataLoad = require("../testData/testData").testDataLoad;
+const chunkLoad = require("../testData/chunk").chunkLoad;
 
 describe("Auth tests", () => {
 
@@ -22,10 +22,11 @@ describe("Auth tests", () => {
 			.set("Content-Type", "application/json")
 			.set("Accept", "application/json")
 			.set("api-key", apiKeyIncorrect)
-			.send(testDataLoad)
+			.send(chunkLoad)
 			.end((err, res) => {
+				expect(err).to.be.null;
 				expect(res).to.have.status(401);
-				expect(res.error.text).to.equal(`{"detail":"Invalid API Key"}`)
+				expect(res.error.text).to.equal(`{"detail":"Invalid API Key"}`);
 				done();
 			});
 	});
@@ -37,10 +38,11 @@ describe("Auth tests", () => {
 			.set("Content-Type", "application/json")
 			.set("Accept", "application/json")
 			.set("api-key", apiKeyMalformed)
-			.send(testDataLoad)
+			.send(chunkLoad)
 			.end((err, res) => {
+				expect(err).to.be.null;
 				expect(res).to.have.status(401);
-				expect(res.error.text).to.equal(`{"detail":"Invalid API Key"}`)
+				expect(res.error.text).to.equal(`{"detail":"Invalid API Key"}`);
 				done();
 			});
 	});
@@ -52,10 +54,11 @@ describe("Auth tests", () => {
 			.set("Content-Type", "application/json")
 			.set("Accept", "application/json")
 			.set("api-key", "")
-			.send(testDataLoad)
+			.send(chunkLoad)
 			.end((err, res) => {
+				expect(err).to.be.null;
 				expect(res).to.have.status(403);
-				expect(res.error.text).to.equal(`{"detail":"Not authenticated"}`)
+				expect(res.error.text).to.equal(`{"detail":"Not authenticated"}`);
 				done();
 			});
 	});
@@ -67,7 +70,7 @@ describe("Auth tests", () => {
 			.set("Content-Type", "application/json")
 			.set("Accept", "application/json")
 			.set("api-key", apiKey)
-			.send(testDataLoad)
+			.send(chunkLoad)
 			.end((err, res) => {
 				expect(err).to.be.null;
 				expect(res).to.have.status(200);
