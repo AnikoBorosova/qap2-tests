@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha 'tests/*.js'"
+    "testAuth": "node ./node_modules/mocha/bin/mocha 'tests/authTest.js'",
+    "testLoad": "node ./node_modules/mocha/bin/mocha 'tests/loadTest.js'",
+    "testCheck": "node ./node_modules/mocha/bin/mocha 'tests/checkTest.js'",
+    "testBuffer": "node ./node_modules/mocha/bin/mocha 'tests/bufferTest.js'",
+    "test": "npm run testAuth && npm run testLoad && npm run testCheck && npm run testBuffer"
   },
   "repository": {
     "type": "git",
