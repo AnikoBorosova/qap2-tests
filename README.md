@@ -17,7 +17,7 @@ API tested: https://qap2-z5olkhbk.review-apps.contractbook.com
 Format:
 ```
 {
-	"apiKey": ```your-api-key```
+	"apiKey": "your-api-key"
 }
 ```
 
