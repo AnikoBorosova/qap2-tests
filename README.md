@@ -12,7 +12,7 @@ API tested: https://qap2-z5olkhbk.review-apps.contractbook.com
 ### How to run the tests locally
 - git clone this repo
 - run `npm install`
-- save your own api-key into a secret.json into the root folder
+- save your own api-key into a ```secret.json``` file into the root folder
 
 Format:
 ```
